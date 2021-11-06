@@ -1,0 +1,33 @@
+# .github/workflows/release.yaml
+
+on:
+  release:
+    types: [created]
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
+jobs:
+  release-linux-amd64:
+    name: release linux/amd64
+    runs-on: ubuntu-latest
+    steps:
+
+# Update Duckumentation
+    - name: Checkout Duckumentation
+      uses: actions/checkout@master
+      with:
+        repository: ducksify/duckumentation
+        token: ${{ secrets.ACTIONS_TOKEN }}
+        path: ./duckumentation
+
+    - name: Update Duckumentation
+      run: |
+        cp README.md ./duckumentation/docs/_generated/vmware-ansible-inventory.md
+        cd ./duckumentation
+        git config user.name github-actions
+        git config user.email github-actions@github.com
+        git add ./docs/_generated/vmware-ansible-inventory.md
+        git commit -am "vmware-ansible-inventory.md" || exit 0
+        git push

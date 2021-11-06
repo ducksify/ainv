@@ -1,0 +1,5 @@
+GOLD:
+  children:
+    MOLIS:
+      hosts:
+        mls3-dev:

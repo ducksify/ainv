@@ -1,0 +1,12 @@
+GOLD:
+  children:
+    MOLIS:
+      hosts:
+        lvn00839d:
+BRONZE:
+  children:
+    SLIMS:
+      hosts:
+        lvn00065d:
+        lvn00232d:
+        lvn00324d:

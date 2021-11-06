@@ -1,0 +1,10 @@
+GOLD:
+  children:
+    None:
+      hosts:
+        mls4-prd:
+BRONZE:
+  children:
+    SLIMS:
+      hosts:
+        lvn00325d:
