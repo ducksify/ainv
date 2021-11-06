@@ -1,4 +1,4 @@
-# Get Ansible inventory from VMWare
+# Get Ansible inventory from Database CMDB
 This commande produceansible  __hosts__ file in the actual directory
 
 
